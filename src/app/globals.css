@@ -1,34 +1,29 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html {
-  height: 100%;
+  --background: #050505; /* Très noir, presque pur, pour faire ressortir le logo */
+  --foreground: #f0f0f0; /* Texte principal blanc cassé */
+  --text-muted: #a0a0a0; /* Texte secondaire gris */
+  
+  --primary-red: #cc0000; /* Rouge drapeau allemand */
+  --primary-gold: #ffcc00; /* Or/Jaune drapeau allemand */
+  
+  --nav-bg: rgba(5, 5, 5, 0.7); /* Fond navbar avec transparence */
+  --nav-border: rgba(255, 255, 255, 0.08); /* Bordure subtile en bas de la navbar */
 }
 
 html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+  background-color: var(--background);
+  color: var(--foreground);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  min-height: 100%;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 * {
@@ -40,10 +35,19 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+button {
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+}
+
+/* Utilitaires pour les animations et effets premium */
+.glass-effect {
+  background: var(--nav-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--nav-border);
 }
